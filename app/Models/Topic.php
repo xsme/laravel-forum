@@ -18,4 +18,14 @@ class Topic extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    /**
+     * Return author of that topic.
+     *
+     * @return User
+     */
+    public function author()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
