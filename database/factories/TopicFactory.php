@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Forum;
 use App\Models\Topic;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TopicFactory extends Factory
@@ -22,7 +24,11 @@ class TopicFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'forum_id' => Forum::inRandomOrder()->first(),
+            'poster_id' => User::inRandomOrder()->first(),
+            'title' => $this->faker->sentence(),
+            'status' => rand(0, 2),
+            'type' => rand(0, 3),
         ];
     }
 }
