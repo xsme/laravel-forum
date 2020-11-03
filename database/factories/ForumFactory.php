@@ -22,7 +22,13 @@ class ForumFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'parent_id' => null,
+            'left_id' => null,
+            'right_id' => null,
+            'name' => $this->faker->sentence(),
+            'description' => $this->faker->sentence(20),
+            'type' => 1,
+            'link' => null,
         ];
     }
 }
