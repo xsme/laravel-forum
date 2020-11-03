@@ -20,8 +20,7 @@ class CreateForumsTable extends Migration
             $table->unsignedBigInteger('right_id')->nullable()->default(null);
             $table->string('name');
             $table->text('description')->nullable()->default(null);
-            $table->tinyInteger('type')->default(0);
-            $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('type')->default(1);
             $table->string('link')->nullable()->default(null);
             $table->timestamps();
             $table->softDeletes();
