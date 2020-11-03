@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Topic extends Model
 {
     use HasFactory;
+
+    /**
+     * Return posts for that topic.
+     *
+     * @return Post
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
