@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Post;
+use App\Models\Topic;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -22,7 +24,10 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'topic_id' => Topic::inRandomOrder()->first(),
+            'poster_id' => User::inRandomOrder()->first(),
+            'poster_ip' => $this->faker->ipv4,
+            'text' => $this->faker->text(),
         ];
     }
 }
